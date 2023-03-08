@@ -99,7 +99,7 @@
           unityI=unityInstance;
           console.log("sdk init...");
           //��
-          vkBridge.send('VKWebAppInit');
+          bridge.send('VKWebAppInit')
           console.log("sdk inited");
           //auth();
           loadingBar.style.display = "none";
@@ -113,9 +113,9 @@
       document.body.appendChild(script);
     </script>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-    <script type="text/javascript">
+    <script>
 
-    function auth(){
+    /*function auth(){
         console.log("auth...");
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
@@ -157,7 +157,7 @@
         clearInterval(isActive);
         isActive = false;
     }
-    });
+    });*/
     </script>
   </body>
 </html>
