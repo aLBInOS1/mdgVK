@@ -101,7 +101,7 @@
           //��
           vkBridge.send('VKWebAppInit')
           console.log("sdk inited");
-          //auth();
+          auth();
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -115,7 +115,7 @@
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script>
 
-    /*function auth(){
+    function auth(){
         console.log("auth...");
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
@@ -157,7 +157,7 @@
         clearInterval(isActive);
         isActive = false;
     }
-    });*/
+    });
     </script>
   </body>
 </html>
