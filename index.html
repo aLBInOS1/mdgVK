@@ -96,9 +96,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           unityI=unityInstance;
+          console.log("sdk init...");
           //��
           vkBridge.send('VKWebAppInit');
-          console.log("sdk init");
+          console.log("sdk inited");
           auth();
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
