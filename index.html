@@ -90,6 +90,7 @@
 
       var script = document.createElement("script");
       var unityI=null;
+      console.log("hello");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
@@ -98,7 +99,7 @@
           unityI=unityInstance;
           console.log("sdk init...");
           //��
-          //vkBridge.send('VKWebAppInit');
+          vkBridge.send('VKWebAppInit');
           console.log("sdk inited");
           //auth();
           loadingBar.style.display = "none";
