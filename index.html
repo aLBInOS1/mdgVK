@@ -99,7 +99,8 @@
           unityI=unityInstance;
           console.log("sdk init...");
           //��
-          vkBridge.send('VKWebAppInit')
+          vkBridge.send('VKWebAppInit');
+          vkBridge.send('VKWebAppShowBannerAd');
           console.log("sdk inited");
           auth();
           loadingBar.style.display = "none";
