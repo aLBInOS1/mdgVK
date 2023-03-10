@@ -151,7 +151,7 @@
       }
 
       function SetLeaderBoard(score){
-        secure.addAppEvent(userId,2,score);
+        bridge.send("VKWebAppShowLeaderBoardBox", { user_result: score})
       }
 
     function GetLeaderBoardEntries(){
