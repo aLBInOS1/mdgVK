@@ -114,11 +114,13 @@
     </script>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script>
+    var userId=0;
 
     function auth(){
         console.log("auth...");
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
+          userId=JSON.parse(_info).id;
           unityI.SendMessage('YandexSDK', 'AuthenticateSuccess', JSON.stringify(_info));
         });
       }
@@ -149,6 +151,7 @@
       }
 
       function SetLeaderBoard(score){
+        secure.addAppEvent(userId,2,score);
       }
 
     function GetLeaderBoardEntries(){
