@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
@@ -99,8 +99,7 @@
           unityI=unityInstance;
           console.log("sdk init...");
           //��
-          vkBridge.send('VKWebAppInit');
-          vkBridge.send('VKWebAppShowBannerAd');
+          vkBridge.send('VKWebAppInit')
           console.log("sdk inited");
           auth();
           loadingBar.style.display = "none";
