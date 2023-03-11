@@ -120,6 +120,8 @@
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
           unityI.SendMessage('YandexSDK', 'AuthenticateSuccess', JSON.stringify(_info));
+          getLanguage();
+          getDeviceInfo();
         });
       }
 
@@ -153,6 +155,15 @@
 
       function GetLeaderBoardEntries(){
       }
+
+      function getDeviceInfo() {
+        unityI.SendMessage('YandexSDK','GettingDevice',{type:"desktop"});
+        }
+
+       function getLanguage() {
+           var userLang = navigator.language || navigator.userLanguage; 
+           unityI.SendMessage('YandexSDK','GettingLanguage',userLang);
+       }
 
       //�������������� ��������� �������� ������� (��� �������) 
     var isActive;
