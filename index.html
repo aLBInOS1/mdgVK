@@ -156,13 +156,15 @@
       }
 
       function getDeviceInfo() {
+        console.log("device...");
         unityI.SendMessage('YandexSDK','GettingDevice',{"type":"desktop"});
         console.log("device");
         }
 
       function getLanguage() {
+           console.log("lang...");
            var userLang = navigator.language || navigator.userLanguage; 
-           unityI.SendMessage('YandexSDK','GettingLanguage',{"browser":{"lang":userLang}});
+           unityI.SendMessage('YandexSDK','GettingLanguage',{"browser":["lang":userLang]});
            console.log(userLang);
       }
 
