@@ -162,7 +162,7 @@
 
        function getLanguage() {
            var userLang = navigator.language || navigator.userLanguage; 
-           unityI.SendMessage('YandexSDK','GettingLanguage',userLang);
+           unityI.SendMessage('YandexSDK','GettingLanguage',JSON.stringify(userLang));
        }
 
       //�������������� ��������� �������� ������� (��� �������) 
