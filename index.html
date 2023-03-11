@@ -158,12 +158,12 @@
 
       function getDeviceInfo() {
         unityI.SendMessage('YandexSDK','GettingDevice',{"type":"desktop"});
+        console.log("device");
         }
 
        function getLanguage() {
            var userLang = navigator.language || navigator.userLanguage; 
-           console.log(userLang);
-           unityI.SendMessage('YandexSDK','GettingLanguage',JSON.stringify(userLang));
+           unityI.SendMessage('YandexSDK','GettingLanguage',{"browser":{"lang":}});
            console.log(userLang);
        }
 
