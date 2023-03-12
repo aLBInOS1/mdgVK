@@ -119,9 +119,9 @@
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
           unityI.SendMessage('YandexSDK', 'AuthenticateSuccess', JSON.stringify(_info));
-          getLanguage();
-          getDeviceInfo();
         });
+        getLanguage();
+        getDeviceInfo();
       }
 
       function getUserData(){
