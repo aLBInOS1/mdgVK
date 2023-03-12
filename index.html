@@ -156,8 +156,21 @@
       }
 
       function getDeviceInfo() {
-        unityI.SendMessage('YandexSDK','GettingDevice',JSON.stringify({"type":"desktop"}));
-        console.log("device");
+        const ua = navigator.userAgent;
+        var device="mobile";
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+            device="tablet";
+        }
+        else {
+            if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                device="mobile";
+            }
+            else {
+               device="desktop";
+            }
+        }
+        unityI.SendMessage('YandexSDK','GettingDevice',JSON.stringify({"type":device}));
+        console.log("device:"+device);
         }
 
       function getLanguage() {
