@@ -118,7 +118,8 @@
         console.log("auth...");
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
-          unityI.SendMessage('YandexSDK', 'AuthenticateSuccess', JSON.stringify(_info));
+          var name=_info.first_name+' '+_info.last_name;
+          unityI.SendMessage('YandexSDK', 'AuthenticateSuccess', name);
           getLanguage();
           getDeviceInfo();
         });
@@ -177,7 +178,7 @@
            var userLang = navigator.language || navigator.userLanguage; 
            userLang = userLang.substr(0, 2).toLowerCase();
            unityI.SendMessage('YandexSDK','GettingLanguage',JSON.stringify({"lang":userLang}));
-           console.log(userLang);
+           console.log("AL:"+userLang);
       }
 
       //�������������� ��������� �������� ������� (��� �������) 
