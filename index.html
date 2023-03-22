@@ -129,6 +129,7 @@
         vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
         console.log(data);
         if (JSON.stringify(data) != "{}") {
+        console.log("dataSended");
             unityI.SendMessage('YandexSDK', 'DataGetting', JSON.stringify(data));
         }
       });}
@@ -178,7 +179,7 @@
            var userLang = navigator.language || navigator.userLanguage; 
            userLang = userLang.substr(0, 2).toLowerCase();
            unityI.SendMessage('YandexSDK','GettingLanguage',JSON.stringify({"lang":userLang}));
-           console.log("AL:"+userLang);
+           console.log("AutoLang:"+userLang);
       }
 
       //�������������� ��������� �������� ������� (��� �������) 
