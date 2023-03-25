@@ -129,7 +129,7 @@
         vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
         console.log(data);
         if (JSON.stringify(data) != "{}") {
-        console.log("dataSended");
+            console.log("dataGeted:"+JSON.stringify(data));
             unityI.SendMessage('YandexSDK', 'DataGetting', JSON.stringify(data));
         }
       });}
