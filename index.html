@@ -62,7 +62,7 @@
         frameworkUrl: buildUrl + "/mdgVK.framework.js.unityweb",
         codeUrl: buildUrl + "/mdgVK.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
+        companyName: "NGame",
         productName: "mobileSurvival",
         productVersion: "1.4",
         showBanner: unityShowBanner,
@@ -179,7 +179,7 @@
            var userLang = navigator.language || navigator.userLanguage; 
            userLang = userLang.substr(0, 2).toLowerCase();
            unityI.SendMessage('YandexSDK','GettingLanguage',JSON.stringify({"lang":userLang}));
-           console.log("AutoLang:"+userLang);
+           console.log("AL:"+userLang);
       }
 
       //�������������� ��������� �������� ������� (��� �������) 
