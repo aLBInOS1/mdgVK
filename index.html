@@ -130,7 +130,7 @@
         console.log(data);
         if (JSON.stringify(data) != "{}") {
 	        console.log("dataGeted:"+JSON.stringify(data));
-            var dataToSend={"save_:":data.keys[0].value};
+            var dataToSend={"save:":data.keys[0].value};
             unityI.SendMessage('YandexSDK', 'DataGetting', JSON.stringify(dataToSend));
         }
       });}
