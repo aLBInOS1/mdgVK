@@ -144,6 +144,7 @@
       function showFullscrenAd(){
         //ad or group subscriptions
         if (Math.random()>0.7) {
+            console.log("AppJoinGroup");
             vkBridge.send('VKWebAppJoinGroup', {
                 group_id: 194094435
                 })
