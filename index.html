@@ -143,7 +143,7 @@
 
       function showFullscrenAd(){
         //ad or group subscriptions
-        if (GetRandomInt(11)>7) {
+        if (Math.random()>0.7) {
             vkBridge.send('VKWebAppJoinGroup', {
                 group_id: 194094435
             });
