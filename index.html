@@ -146,6 +146,17 @@
         if (Math.random()>0.7) {
             vkBridge.send('VKWebAppJoinGroup', {
                 group_id: 194094435
+                })
+                .then((data) => { 
+                if (data.result) {
+                    // Пользователь подписался на сообщество
+                }
+                })
+                .catch((error) => {
+                vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
+                console.log(data);});
+                // Ошибка
+                console.log(error);
             });
         }
         else {
