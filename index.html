@@ -96,7 +96,6 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           unityI=unityInstance;
-          console.log("sdk init...");
           //вк
           vkBridge.send('VKWebAppInit')
           console.log("sdk inited");
