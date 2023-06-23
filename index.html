@@ -193,14 +193,15 @@
            console.log("AutoLanguage:"+userLang);
       }
 
-      function purchase() {
+      function purchase(itemName) {
         vkBridge.send('VKWebAppShowOrderBox', { 
             type: 'item',
-            item: '200Diamonds'
+            item: itemName
             })
             .then((data) => {
                 if (data.success) {
                     // Оплата голосами прошла успешно
+                    unityI.SendMessage('YandexSDK','DonateDone',itemName);
                 }})
             .catch((error) => {
                 // Ошибка
