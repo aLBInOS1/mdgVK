@@ -201,7 +201,7 @@
             .then((data) => {
                 if (data.success) {
                     // Оплата голосами прошла успешно
-                    unityI.SendMessage('YandexSDK','DonateDone',itemName);
+                    unityI.SendMessage('YandexSDK','DonateDoned',itemName);
                 }})
             .catch((error) => {
                 // Ошибка
