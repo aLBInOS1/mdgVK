@@ -89,6 +89,7 @@
           vkBridge.send('VKWebAppInit')
           console.log("sdk inited");
           auth();
+          sendSDKtype();
           loadingBar.style.display = "none";
         }).catch((message) => {
           alert(message);
@@ -201,6 +202,8 @@
       function fullScreen() {
         unityI.SetFullscreen(1);
       }
+
+      function sendSDKtype() { unityI.SendMessage('YandexSDK','SetSDKtype',"0"); }
 
       //�������������� ��������� �������� ������� (��� �������) 
     var isActive;
