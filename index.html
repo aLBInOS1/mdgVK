@@ -170,6 +170,10 @@
             }
             else {
                device="desktop";
+               vkBridge.send('VKWebAppShowBannerAd', { 
+                    banner_location: 'bottom',
+                    can_close: false
+               });
             }
         }
         unityI.SendMessage('YandexSDK','GettingDevice',JSON.stringify({"type":device}));
