@@ -163,6 +163,10 @@
         var device="mobile";
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
             device="tablet";
+            vkBridge.send('VKWebAppShowBannerAd', { 
+                banner_location: 'bottom',
+                can_close: false
+            });
         }
         else {
             if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
