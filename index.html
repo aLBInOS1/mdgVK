@@ -171,10 +171,21 @@
       }
 
       function fullScreen() {
-        unityI.SetFullscreen(1);
+        //unityI.SetFullscreen(1);
       }
 
       function sendSDKtype() { unityI.SendMessage('YandexSDK','SetSDKtype',"0"); }
+
+    //�������������� ��������� �������� ������� (��� �������) 
+    var isActive;
+    document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == "hidden"&&unityI!=null) {
+        isActive = setInterval(function() { unityI.SendMessage('YandexSDK', 'updateNonFocusedTab'); }, 80);
+    } else {
+        clearInterval(isActive);
+        isActive = false;
+    }
+    });
 
     </script>
   </body>
