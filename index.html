@@ -45,7 +45,7 @@
         container.className = "unity-mobile";
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 0.9;
+        config.devicePixelRatio = 1.4;
       } else {
         canvas.style.width = "100%";
         canvas.style.height = "100%";
@@ -109,22 +109,13 @@
             console.log("AppJoinGroup");
             vkBridge.send('VKWebAppJoinGroup', {
                 group_id: 194094435
-                })
-                .then((data) => { 
-                if (data.result) {
-                    // Пользователь подписался на сообщество
-                }
-                })
-                .catch((error) => {
-                vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
-                console.log(data);});
-                // Ошибка
-                console.log(error);
+            })
+            .catch((error) => {
+                vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}); }
             });
         }
         else {
-            vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
-              console.log(data);});
+            vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"});
         }
       }
 
