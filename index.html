@@ -64,8 +64,8 @@
           //вк
           vkBridge.send('VKWebAppInit')
           console.log("sdk inited");
-          auth();
           sendSDKtype();
+          auth();
           loadingBar.style.display = "none";
         }).catch((message) => {
           alert(message);
