@@ -140,7 +140,7 @@
         unityI.SendMessage('YandexSDK','GettingDevice',JSON.stringify({"type":device}));
         console.log("device:"+device);
         vkBridge.send('VKWebAppShowBannerAd', { 
-            banner_location: 'top',
+            banner_location: 'bottom',
             can_close: false
         });
       }
