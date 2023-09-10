@@ -167,7 +167,7 @@
       }
 
       function fullScreen() {
-        if (device!="mobile") unityI.SetFullscreen(1);
+        if (device=="desktop") unityI.SetFullscreen(1);
       }
 
       function sendSDKtype() { unityI.SendMessage('YandexSDK','SetSDKtype',"0"); }
