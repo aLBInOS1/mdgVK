@@ -139,10 +139,12 @@
         }
         unityI.SendMessage('YandexSDK','GettingDevice',JSON.stringify({"type":device}));
         console.log("device:"+device);
-        vkBridge.send('VKWebAppShowBannerAd', { 
-            banner_location: 'bottom',
-            can_close: false
-        });
+        if (device!="mobile") {
+            vkBridge.send('VKWebAppShowBannerAd', { 
+                banner_location: 'bottom',
+                can_close: false
+            });
+        }
       }
 
       function getLanguage() {
@@ -170,6 +172,12 @@
 
       function fullScreen() {
         if (device=="desktop") unityI.SetFullscreen(1);
+        if (device!="mobile") {
+            vkBridge.send('VKWebAppShowBannerAd', { 
+                banner_location: 'bottom',
+                can_close: false
+            });
+        }
       }
 
       function sendSDKtype() { unityI.SendMessage('YandexSDK','SetSDKtype',"0"); }
