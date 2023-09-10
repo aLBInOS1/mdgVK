@@ -125,9 +125,9 @@
           unityI.SendMessage('YandexSDK', 'RewardGetting',JSON.stringify(data.result));})
       }
 
+      var device="mobile";
       function getDeviceInfo() {
         const ua = navigator.userAgent;
-        var device="mobile";
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
             device="tablet";
         }
