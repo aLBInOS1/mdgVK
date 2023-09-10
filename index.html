@@ -62,13 +62,11 @@
         }).then((unityInstance) => {
           unityI=unityInstance;
           //вк
-          vkBridge.send('VKWebAppInit');
-          console.log("sdk inited");
-          sendSDKtype();
-          auth();
-          vkBridge.send('VKWebAppShowBannerAd', { 
-            banner_location: 'top',
-            can_close: false
+          vkBridge.send('VKWebAppInit')
+          .then((data) => {
+              console.log("sdk inited");
+              sendSDKtype();
+              auth();
           });
           loadingBar.style.display = "none";
         }).catch((message) => {
@@ -140,8 +138,12 @@
             }
         }
         unityI.SendMessage('YandexSDK','GettingDevice',JSON.stringify({"type":device}));
-            console.log("device:"+device);
-        }
+        console.log("device:"+device);
+        vkBridge.send('VKWebAppShowBannerAd', { 
+            banner_location: 'top',
+            can_close: false
+        });
+      }
 
       function getLanguage() {
            var userLang = navigator.language || navigator.userLanguage; 
