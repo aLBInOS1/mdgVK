@@ -141,6 +141,7 @@
         console.log("device:"+device);
         vkBridge.send('VKWebAppShowBannerAd', { 
             banner_location: 'bottom',
+            layout_type: 'overlay',
             can_close: false
         });
       }
