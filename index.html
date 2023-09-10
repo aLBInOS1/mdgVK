@@ -62,14 +62,16 @@
         }).then((unityInstance) => {
           unityI=unityInstance;
           //вк
-          vkBridge.send('VKWebAppInit');
-          console.log("sdk inited");
-          sendSDKtype();
-          auth();
-          vkBridge.send('VKWebAppShowBannerAd', { 
-            banner_location: 'top',
-            can_close: false
-          });
+          vkBridge.send('VKWebAppInit')
+            .then((data) => {
+              console.log("sdk inited");
+              sendSDKtype();
+              auth();
+              vkBridge.send('VKWebAppShowBannerAd', { 
+                banner_location: 'top',
+                can_close: false
+              });
+            });
           loadingBar.style.display = "none";
         }).catch((message) => {
           alert(message);
