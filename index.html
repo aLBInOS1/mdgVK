@@ -103,10 +103,10 @@
       function showBanner() {
         vkBridge.send('VKWebAppCheckBannerAd').then((data) => { 
             if (!data.result) {
-                vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'top',can_close: false });
+                vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom',can_close: false });
             }
         }).catch((error) => {
-            vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'top',can_close: false });
+            vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom',can_close: false });
         });
       }
 
