@@ -97,18 +97,7 @@
             var dataToSend={"data":data.keys[0].value};
             unityI.SendMessage('YandexSDK', 'DataGetting', JSON.stringify(dataToSend));
         }
-       });
-      }
-
-      function showBanner() {
-        vkBridge.send('VKWebAppCheckBannerAd').then((data) => { 
-            if (!data.result) {
-                vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom',can_close: false });
-            }
-        }).catch((error) => {
-            vkBridge.send('VKWebAppShowBannerAd', { banner_location: 'bottom',can_close: false });
-        });
-      }
+      });}
 
       function setUserData(data){
         console.log(data);
@@ -139,7 +128,10 @@
         const ua = navigator.userAgent;
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
             device="tablet";
-            showBanner();
+            vkBridge.send('VKWebAppShowBannerAd', { 
+                banner_location: 'bottom',
+                can_close: false
+            });
         }
         else {
             if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
@@ -147,7 +139,10 @@
             }
             else {
                device="desktop";
-               showBanner();
+               vkBridge.send('VKWebAppShowBannerAd', { 
+                    banner_location: 'bottom',
+                    can_close: false
+               });
             }
         }
         unityI.SendMessage('YandexSDK','GettingDevice',device);
